@@ -115,6 +115,11 @@ main {
     border-radius: 5px;
 }
 
+.right-img-wrapper {
+    position: sticky;
+    top: 75px;
+}
+
 :root {
     font-size: 16px;
     font-family: 'Sorts Mill Goudy', sans-serif;
