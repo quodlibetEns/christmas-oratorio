@@ -1,0 +1,104 @@
+a {
+    color: var(--main-colour);
+    text-decoration-thickness: 1.5px;
+}
+
+body {
+    padding: 0;
+    background-color: var(--background-colour);
+}
+
+.credit {
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+h1, h2 {
+    color: var(--main-colour);
+    font-style: italic;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    line-height: 60px;
+    padding: 5px;
+    background-color: var(--main-colour);
+    color: #fff;
+    z-index: 1;
+}
+
+#intro {
+    grid-area: left1;
+}
+
+main {
+    position: absolute;
+    top: 60px;
+    min-width: 200px;
+    text-align: justify;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "left1 right1"
+        "left2 right2"
+        "left3 right3";
+    column-gap: 5%;
+    row-gap: 10px;
+    margin-left: 10vw;
+    margin-right: 5vw;
+}
+
+#part1 {
+    grid-area: left2;
+}
+
+#part2 {
+    grid-area: left3;
+}
+
+#pic1 {
+    grid-area: right1;
+}
+
+#pic2 {
+    grid-area: right2;
+}
+
+#pic3 {
+    grid-area: right3;
+}
+
+.right {
+    justify-self: end;
+    margin-top: 50px;
+}
+
+.right-img {
+    max-width: 90%;
+    max-height: 70vh;
+    border-radius: 5px;
+}
+
+:root {
+    font-size: 16px;
+    font-family: 'Sorts Mill Goudy', sans-serif;
+    --main-colour: #cf2946;
+    --light-colour: #fff;
+    --background-colour: rgba(255, 245, 245, 1);
+}
