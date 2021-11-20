@@ -21,17 +21,24 @@ body {
     grid-area: german;
 }
 
-h1, h2 {
+h1 {
+    font-size: 40px;
+    line-height: 60px;
+    font-style: italic;
+    margin: 0 0 0 10vw; 
+}
+
+h2, h3 {
     color: var(--main-colour);
     font-style: italic;
 }
 
-h1 {
+h2 {
     font-size: 2rem;
     line-height: 2rem;
 }
 
-h2 {
+h3 {
     font-size: 1.5rem;
     line-height: 1.5rem;
 }
@@ -42,11 +49,9 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    font-size: 40px;
-    line-height: 60px;
     padding: 5px;
     background-color: var(--main-colour);
-    color: #fff;
+    color: var(--light-colour);
     z-index: 1;
 }
 
