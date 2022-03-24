@@ -3,11 +3,6 @@ a {
     text-decoration-thickness: 1.5px;
 }
 
-body {
-    padding: 0;
-    background-color: var(--background-color);
-}
-
 #accessibility-button {
     background-color: #fff;
     color: #000;
@@ -24,27 +19,54 @@ body {
 }
 
 #accessibility-pop-up {
-    width: 100%;
-    height: 100%;
+    width: 50vw;
+    /*height: 50vh;*/
     position: fixed;
-    top: 0px;
-    left: 0px;
-    background-color: rgba(255, 245, 245, 0.95);
+    top: 25vh;
+    left: 25vw;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: rgba(255, 245, 245, 0.9);
     display: none;
     z-index: 2;
-    padding: 10vh 10px 10px 10px;
-    font-size: 50px;
+    padding: 10px;
+    font-size: 40px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.accessibility-toggle {
-    width: 50vw;
-    border: 2px solid #000;
-    margin: 20px 22vw 20px 22vw;
-    padding: 5px;
+#accessibility-pop-up > div {
     cursor: pointer;
-    border-radius: 10px;
+}
+
+.accessibility-toggle {
+    border: 2px solid #000;
+    margin: 20px 10% 20px 10%;
+    padding: 5px;
+    border-radius: 45px;
+    font-size: 32px;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+}
+
+.accessibility-toggle:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+body {
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+#close-accessibility-pop-up {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    margin: 10px 10px 0 0;
 }
 
 .credit {

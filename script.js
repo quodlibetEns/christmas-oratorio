@@ -41,6 +41,7 @@ closeAccessibilityPopUp.addEventListener('click', function() {
 
 // store the default state of the items effected
 const root = document.querySelector(':root');
+const jumpButton = document.getElementById('jump-button');
 var contrast = false;
 var largeFont = false;
 var sansSerif = false;
@@ -51,10 +52,12 @@ document.getElementById('high-contrast').addEventListener('click', function() {
     if (contrast == false) {
         root.style.setProperty('--background-color', '#fff');
         root.style.setProperty('--main-color', '#a13');
+        jumpButton.style.backgroundColor = "#a13";
         contrast = true;
     } else if (contrast == true) {
         root.style.setProperty('--background-color', 'rgba(255, 245, 245, 1)');
         root.style.setProperty('--main-color', '#cf2946');
+        jumpButton.style.backgroundColor = "#f37f9c";
         contrast = false;
     }
 })
@@ -65,10 +68,12 @@ document.getElementById('font-size').addEventListener('click', function() {
     if (largeFont == false) {
         root.style.setProperty('font-size', '32px');
         document.getElementById('header').style.height = "70px";
+        jumpButton.style.fontSize = "32px";
         largeFont = true;
     } else if (largeFont == true) {
         root.style.setProperty('font-size', '16px');
         document.getElementById('header').style.height = "50px";
+        jumpButton.style.fontSize = "16px";
         largeFont = false;
     }
 })
