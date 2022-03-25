@@ -134,6 +134,7 @@ header {
 
 #intro {
     grid-area: left1;
+    font-size: 1.1rem;
 }
 
 #jump-button {
