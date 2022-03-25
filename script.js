@@ -52,12 +52,12 @@ document.getElementById('high-contrast').addEventListener('click', function() {
     if (contrast == false) {
         root.style.setProperty('--background-color', '#fff');
         root.style.setProperty('--main-color', '#a13');
-        jumpButton.style.backgroundColor = "#a13";
+        root.style.setProperty('--highlight-color', '#a13');
         contrast = true;
     } else if (contrast == true) {
         root.style.setProperty('--background-color', 'rgba(255, 245, 245, 1)');
         root.style.setProperty('--main-color', '#cf2946');
-        jumpButton.style.backgroundColor = "#f37f9c";
+        root.style.setProperty('--highlight-color', '#f37f9c');
         contrast = false;
     }
 })

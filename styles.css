@@ -142,7 +142,7 @@ header {
 }
 
 #jump-button {
-    background-color: #f37f9c;
+    background-color: var(--highlight-color);
     color: #fff;
     font-size: 16px;
     font-weight: normal;
@@ -229,6 +229,7 @@ main {
     --main-color: #cf2946;
     --light-color: #fff;
     --background-color: rgba(255, 245, 245, 1);
+    --highlight-color: #f37f9c;
 }
 
 .spotify {
