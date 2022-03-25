@@ -132,6 +132,10 @@ header {
     z-index: 1;
 }
 
+.indent {
+    padding-left: 2em;
+}
+
 #intro {
     grid-area: left1;
     font-size: 1.1rem;
