@@ -59,6 +59,10 @@ body {
     background-color: var(--background-color);
 }
 
+.center {
+    text-align: center;
+}
+
 #close-accessibility-pop-up {
     position: absolute;
     top: 0px;
@@ -96,6 +100,11 @@ body {
 
 .german {
     grid-area: german;
+}
+
+/*fix for the header covering up content when the page scrolls to an in-page anchor*/
+html {
+    scroll-padding-top: 50px;
 }
 
 h1 {
