@@ -227,6 +227,15 @@ main {
     padding: 10px;
 }
 
+.part-card > h2 {
+    margin-top: 0.5rem; /* reduce margin below .scroll-to-top */
+}
+
+#part-card-1 .scroll-to-top {
+    grid-area: to-prev;
+    text-align: left;
+}
+
 #part1 {
     grid-area: left2;
 }
@@ -280,28 +289,28 @@ main {
     }
 }
 
-#scroll-to-top {
-    display: none;
-    width: 50px;
-    height: 50px;
-    font-size: 48px;
-    line-height: 60px;
-    text-align: center;
-    color: #fff;
-    border-radius: 100%;
-    background-color: var(--highlight-color);
-    transition: all 0.3s ease 0s;
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
+.scroll-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "to-prev to-top to-next";
+    gap: 5px;
+}
+
+.scroll-links a {
+    text-decoration: none;
     cursor: pointer;
-    z-index: 5;
 }
 
-#scroll-to-top:hover, #scroll-to-top:focus {
-    background-color: var(--main-color);
-}
+.scroll-to-top {
+    grid-area: to-top;
+    text-align: center;
+} /* but the first one uses left position with no scroll-to-prev: see #part-card-1 .scroll-to-top
+and the last one uses right position with no scroll-to-next: see #part-card-6 .scroll-to-top */
 
+.scroll-to-next {
+    grid-area: to-next;
+    text-align: right;
+}
 
 .spotify {
     width: 100%;

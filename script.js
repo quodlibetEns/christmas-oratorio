@@ -89,28 +89,7 @@ document.getElementById('sans-serif').addEventListener('click', function() {
     }
 })
 
-// 3. SCROLL-TO-TOP BUTTON
-// largely copied off w3schools
-
-const scrollButton = document.getElementById('scroll-to-top');
-
-// make visible only when user scrolls down
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollButton.style.display = 'block';
-    } else {
-        scrollButton.style.display = 'none';
-    }
-}
-
-// function on click - scroll to top
-scrollButton.addEventListener('click', function() {
-    document.body.scrollTop = 0; //Safari
-    document.documentElement.scrollTop = 0; //Everything else
-})
-
-// 4. MISCELLANEA
+// 3. MISCELLANEA
 
 // Change jumpButton bgcolor when link within it is in focus
 const jumpButtonLink = document.getElementById('jump-button-link');
