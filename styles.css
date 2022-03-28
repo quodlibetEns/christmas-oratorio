@@ -236,6 +236,11 @@ main {
     text-align: left;
 }
 
+#part-card-6 .scroll-to-top {
+    grid-area: to-next;
+    text-align: right;
+}
+
 #part1 {
     grid-area: left2;
 }
