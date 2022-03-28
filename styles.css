@@ -1,3 +1,17 @@
+/* Snippet to overrule any and all animations/transitions if user prefers less motion */
+@media screen and (prefers-reduced-motion: reduce) {  
+    * {
+      /* Very short durations means JavaScript that relies on events still works */
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+
+    html {
+        scroll-behavior: auto !important;
+    }
+}
+
 a {
     color: var(--main-color);
     text-decoration-thickness: 1.5px;
@@ -17,7 +31,7 @@ a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#accessibility-button:hover {
+#accessibility-button:hover, #accessibility-button:focus {
     background-color: #000;
     color: #fff;
 }
@@ -53,7 +67,7 @@ a:hover {
     transition: all 0.3s ease 0s;
 }
 
-.accessibility-toggle:hover {
+.accessibility-toggle:hover, #accessibility-toggle:focus {
     background-color: #000;
     color: #fff;
 }
@@ -145,6 +159,10 @@ header {
     z-index: 1;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .indent {
     padding-left: 2em;
 }
@@ -166,9 +184,9 @@ header {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#jump-button:hover {
+#jump-button:hover, #jump-button:focus {
     background-color: var(--main-color);
-}
+} /* :focus on the link for div's bgcolor is set in js */
 
 #jump-button > a:hover {
     color: #fff;
@@ -194,6 +212,10 @@ main {
 
 .none {
     text-decoration: none;
+    color: inherit;
+}
+
+.none:hover {
     color: inherit;
 }
 
@@ -249,6 +271,15 @@ main {
     --highlight-color: #f37f9c;
 }
 
+/* Automatic high contrast for those who prefer it on those browsers that support it */
+@media (prefers-contrast: high) {
+    :root {
+        --main-color: rgb(102, 10, 30) !important;
+        --background-color: #fff !important;
+        --highlight-color: rgb(102, 10, 30) !important;
+    }
+}
+
 #scroll-to-top {
     display: none;
     width: 50px;
@@ -267,7 +298,7 @@ main {
     z-index: 5;
 }
 
-#scroll-to-top:hover {
+#scroll-to-top:hover, #scroll-to-top:focus {
     background-color: var(--main-color);
 }
 

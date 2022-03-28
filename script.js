@@ -30,7 +30,6 @@ const accessibilityButton = document.getElementById('accessibility-button');
 const closeAccessibilityPopUp = document.getElementById('close-accessibility-pop-up');
 
 // Trigger and close pop-up
-
 accessibilityButton.addEventListener('click', function() {
     accessibilityPopUp.style.display = "block";
 })
@@ -47,12 +46,12 @@ var largeFont = false;
 var sansSerif = false;
 
 // Toggle high contrast
-
+// To fix: Currently if a the css prefers-contrast @media query is triggered, this will still assume contrast is off on page load
 document.getElementById('high-contrast').addEventListener('click', function() {
     if (contrast == false) {
         root.style.setProperty('--background-color', '#fff');
-        root.style.setProperty('--main-color', '#a13');
-        root.style.setProperty('--highlight-color', '#a13');
+        root.style.setProperty('--main-color', 'rgb(102, 10, 30)');
+        root.style.setProperty('--highlight-color', 'rgb(102, 10, 30)');
         contrast = true;
     } else if (contrast == true) {
         root.style.setProperty('--background-color', 'rgba(255, 245, 245, 1)');
@@ -109,4 +108,15 @@ function scrollFunction() {
 scrollButton.addEventListener('click', function() {
     document.body.scrollTop = 0; //Safari
     document.documentElement.scrollTop = 0; //Everything else
+})
+
+// 4. MISCELLANEA
+
+// Change jumpButton bgcolor when link within it is in focus
+const jumpButtonLink = document.getElementById('jump-button-link');
+jumpButtonLink.addEventListener('focus', function() {
+    jumpButton.style.backgroundColor = 'var(--main-color)';
+})
+jumpButtonLink.addEventListener('blur', function() {
+    jumpButton.style.backgroundColor = 'var(--highlight-color)';
 })
