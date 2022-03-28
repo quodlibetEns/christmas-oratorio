@@ -23,6 +23,7 @@ function getTotalHeight() {
 let newHeight = getTotalHeight().toString() + "px";
 document.getElementById('right-img-1').style.maxHeight = newHeight;
 
+
 // 2. ACCESSIBILITY MENU
 
 const accessibilityPopUp = document.getElementById('accessibility-pop-up');
@@ -91,11 +92,10 @@ document.getElementById('sans-serif').addEventListener('click', () => {
 
 // 3. MISCELLANEA
 
-// Change jumpButton bgcolor when link within it is in focus
-const jumpButtonLink = document.getElementById('jump-button-link');
-jumpButtonLink.addEventListener('focus', function() {
-    jumpButton.style.backgroundColor = 'var(--main-color)';
-})
-jumpButtonLink.addEventListener('blur', function() {
-    jumpButton.style.backgroundColor = 'var(--highlight-color)';
-})
+// Ensure the jump-to-music link with role="button" behaves like a button
+// I.e. space key needs to trigger link
+document.getElementById('jump-button').addEventListener('keyup', (e) => {
+    if (e.code == "Space") {
+        document.getElementById('part1').scrollIntoView();
+    }
+})  

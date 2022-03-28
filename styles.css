@@ -77,6 +77,17 @@ body {
     background-color: var(--background-color);
 }
 
+button {
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 45px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
+    margin: none;
+}
+
 .center {
     text-align: center;
 }
@@ -98,13 +109,6 @@ body {
 
 .english {
     grid-area: english;
-}
-
-.focus-button {
-    padding: 0.5em 1em;
-    border-radius: 45px;
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
 }
 
 #full-width-band {
@@ -173,9 +177,14 @@ html {
 }
 
 #jump-button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 45px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    font-size: 1rem;
     background-color: var(--highlight-color);
     color: #fff;
-    font-size: 1rem;
     font-weight: normal;
     font-style: normal;
     display: inline;
