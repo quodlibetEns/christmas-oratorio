@@ -23,6 +23,7 @@ function getTotalHeight() {
 let newHeight = getTotalHeight().toString() + "px";
 document.getElementById('right-img-1').style.maxHeight = newHeight;
 
+
 // 2. ACCESSIBILITY MENU
 
 const accessibilityPopUp = document.getElementById('accessibility-pop-up');
@@ -30,14 +31,13 @@ const accessibilityButton = document.getElementById('accessibility-button');
 const closeAccessibilityPopUp = document.getElementById('close-accessibility-pop-up');
 
 // Trigger and close pop-up
+accessibilityButton.addEventListener('click', () => {
+        accessibilityPopUp.style.display = "block";
+    })
 
-accessibilityButton.addEventListener('click', function() {
-    accessibilityPopUp.style.display = "block";
-})
-
-closeAccessibilityPopUp.addEventListener('click', function() {
-    accessibilityPopUp.style.display = "none";
-})
+closeAccessibilityPopUp.addEventListener('click', () => {
+        accessibilityPopUp.style.display = "none";
+    })
 
 // store the default state of the items effected
 const root = document.querySelector(':root');
@@ -47,40 +47,40 @@ var largeFont = false;
 var sansSerif = false;
 
 // Toggle high contrast
-
-document.getElementById('high-contrast').addEventListener('click', function() {
-    if (contrast == false) {
-        root.style.setProperty('--background-color', '#fff');
-        root.style.setProperty('--main-color', '#a13');
-        root.style.setProperty('--highlight-color', '#a13');
-        contrast = true;
-    } else if (contrast == true) {
-        root.style.setProperty('--background-color', 'rgba(255, 245, 245, 1)');
-        root.style.setProperty('--main-color', '#cf2946');
-        root.style.setProperty('--highlight-color', '#f37f9c');
-        contrast = false;
-    }
-})
+// To fix: Currently if a the css prefers-contrast @media query is triggered, this will still assume contrast is off on page load
+document.getElementById('high-contrast').addEventListener('click', () => {
+        if (contrast == false) {
+            root.style.setProperty('--background-color', '#fff');
+            root.style.setProperty('--main-color', 'rgb(102, 10, 30)');
+            root.style.setProperty('--highlight-color', 'rgb(102, 10, 30)');
+            contrast = true;
+        } else if (contrast == true) {
+            root.style.setProperty('--background-color', 'rgba(255, 245, 245, 1)');
+            root.style.setProperty('--main-color', '#cf2946');
+            root.style.setProperty('--highlight-color', '#f37f9c');
+            contrast = false;
+        }
+    })
 
 // Toggle large font size
 
-document.getElementById('font-size').addEventListener('click', function() {
-    if (largeFont == false) {
-        root.style.setProperty('font-size', '32px');
-        document.getElementById('header').style.height = "70px";
-        jumpButton.style.fontSize = "32px";
-        largeFont = true;
-    } else if (largeFont == true) {
-        root.style.setProperty('font-size', '16px');
-        document.getElementById('header').style.height = "50px";
-        jumpButton.style.fontSize = "16px";
-        largeFont = false;
-    }
-})
+document.getElementById('font-size').addEventListener('click', () => {
+        if (largeFont == false) {
+            root.style.setProperty('font-size', '32px');
+            document.getElementById('header').style.height = "70px";
+            jumpButton.style.fontSize = "32px";
+            largeFont = true;
+        } else if (largeFont == true) {
+            root.style.setProperty('font-size', '16px');
+            document.getElementById('header').style.height = "50px";
+            jumpButton.style.fontSize = "16px";
+            largeFont = false;
+        }
+    })
 
 // Toggle sans-serif font
 
-document.getElementById('sans-serif').addEventListener('click', function() {
+document.getElementById('sans-serif').addEventListener('click', () => {
     if (sansSerif == false) {
         root.style.setProperty('font-family', 'Arial, Helvetica, sans-serif');
         sansSerif = true;
@@ -90,23 +90,12 @@ document.getElementById('sans-serif').addEventListener('click', function() {
     }
 })
 
-// 3. SCROLL-TO-TOP BUTTON
-// largely copied off w3schools
+// 3. MISCELLANEA
 
-const scrollButton = document.getElementById('scroll-to-top');
-
-// make visible only when user scrolls down
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollButton.style.display = 'block';
-    } else {
-        scrollButton.style.display = 'none';
+// Ensure the jump-to-music link with role="button" behaves like a button
+// I.e. space key needs to trigger link
+document.getElementById('jump-button').addEventListener('keyup', (e) => {
+    if (e.code == "Space") {
+        document.getElementById('part1').scrollIntoView();
     }
-}
-
-// function on click - scroll to top
-scrollButton.addEventListener('click', function() {
-    document.body.scrollTop = 0; //Safari
-    document.documentElement.scrollTop = 0; //Everything else
-})
+})  

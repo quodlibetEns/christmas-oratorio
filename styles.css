@@ -1,3 +1,17 @@
+/* Snippet to overrule any and all animations/transitions if user prefers less motion */
+@media screen and (prefers-reduced-motion: reduce) {  
+    * {
+      /* Very short durations means JavaScript that relies on events still works */
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+
+    html {
+        scroll-behavior: auto !important;
+    }
+}
+
 a {
     color: var(--main-color);
     text-decoration-thickness: 1.5px;
@@ -17,7 +31,7 @@ a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#accessibility-button:hover {
+#accessibility-button:hover, #accessibility-button:focus {
     background-color: #000;
     color: #fff;
 }
@@ -34,7 +48,7 @@ a:hover {
     display: none;
     z-index: 2;
     padding: 10px;
-    font-size: 40px;
+    font-size: 2.5rem;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -48,12 +62,12 @@ a:hover {
     margin: 20px 10% 20px 10%;
     padding: 5px;
     border-radius: 45px;
-    font-size: 32px;
+    font-size: 2rem;
     background-color: #fff;
     transition: all 0.3s ease 0s;
 }
 
-.accessibility-toggle:hover {
+.accessibility-toggle:hover, #accessibility-toggle:focus {
     background-color: #000;
     color: #fff;
 }
@@ -61,6 +75,17 @@ a:hover {
 body {
     padding: 0;
     background-color: var(--background-color);
+}
+
+button {
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 45px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
+    margin: none;
 }
 
 .center {
@@ -84,13 +109,6 @@ body {
 
 .english {
     grid-area: english;
-}
-
-.focus-button {
-    padding: 0.5em 1em;
-    border-radius: 45px;
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
 }
 
 #full-width-band {
@@ -146,6 +164,10 @@ header {
     z-index: 1;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .indent {
     padding-left: 2em;
 }
@@ -156,9 +178,14 @@ header {
 }
 
 #jump-button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 45px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    font-size: 1rem;
     background-color: var(--highlight-color);
     color: #fff;
-    font-size: 16px;
     font-weight: normal;
     font-style: normal;
     display: inline;
@@ -167,9 +194,9 @@ header {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#jump-button:hover {
+#jump-button:hover, #jump-button:focus {
     background-color: var(--main-color);
-}
+} /* :focus on the link for div's bgcolor is set in js */
 
 #jump-button > a:hover {
     color: #fff;
@@ -198,12 +225,30 @@ main {
     color: inherit;
 }
 
+.none:hover {
+    color: inherit;
+}
+
 .part-card {
     width: 100%;
     background-color: #fff;
     border: 3px solid var(--main-color);
     border-radius: 5px;
     padding: 10px;
+}
+
+.part-card > h2 {
+    margin-top: 0.5rem; /* reduce margin below .scroll-to-top */
+}
+
+#part-card-1 .scroll-to-top {
+    grid-area: to-prev;
+    text-align: left;
+}
+
+#part-card-6 .scroll-to-top {
+    grid-area: to-next;
+    text-align: right;
 }
 
 #part1 {
@@ -250,28 +295,37 @@ main {
     --highlight-color: #f37f9c;
 }
 
-#scroll-to-top {
-    display: none;
-    width: 50px;
-    height: 50px;
-    font-size: 48px;
-    line-height: 60px;
-    text-align: center;
-    color: #fff;
-    border-radius: 100%;
-    background-color: var(--highlight-color);
-    transition: all 0.3s ease 0s;
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
+/* Automatic high contrast for those who prefer it on those browsers that support it */
+@media (prefers-contrast: high) {
+    :root {
+        --main-color: rgb(102, 10, 30) !important;
+        --background-color: #fff !important;
+        --highlight-color: rgb(102, 10, 30) !important;
+    }
+}
+
+.scroll-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "to-prev to-top to-next";
+    gap: 5px;
+}
+
+.scroll-links a {
+    text-decoration: none;
     cursor: pointer;
-    z-index: 5;
 }
 
-#scroll-to-top:hover {
-    background-color: var(--main-color);
-}
+.scroll-to-top {
+    grid-area: to-top;
+    text-align: center;
+} /* but the first one uses left position with no scroll-to-prev: see #part-card-1 .scroll-to-top
+and the last one uses right position with no scroll-to-next: see #part-card-6 .scroll-to-top */
 
+.scroll-to-next {
+    grid-area: to-next;
+    text-align: right;
+}
 
 .spotify {
     width: 100%;
