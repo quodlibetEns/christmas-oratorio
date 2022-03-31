@@ -208,15 +208,15 @@ main {
     min-width: 200px;
     text-align: justify;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 4fr 2fr;
     grid-template-rows: auto;
     grid-template-areas: 
         "left1 right1"
         "left2 right2"
         "left3 right3";
-    column-gap: 5%;
-    row-gap: 10px;
-    margin-left: 10vw;
+    column-gap: 2.5vw;
+    row-gap: 2.5vw;
+    margin-left: 8vw;
     margin-right: 5vw;
 }
 
@@ -231,10 +231,11 @@ main {
 
 .part-card {
     width: 100%;
-    background-color: #fff;
+    background-color: rgb(255, 252, 252);
     border: 3px solid var(--main-color);
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 1vw 2.5vw 1vw 2.5vw;
+    box-sizing: border-box;
 }
 
 .part-card > h2 {
@@ -269,6 +270,10 @@ main {
 
 #pic3 {
     grid-area: right3;
+}
+
+.recitative {
+    text-align: justify !important;
 }
 
 .right {
@@ -338,6 +343,6 @@ and the last one uses right position with no scroll-to-next: see #part-card-6 .s
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "german english";
-    gap: 5px;
+    gap: 1rem;
     text-align: left;
 }
