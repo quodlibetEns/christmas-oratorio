@@ -216,8 +216,7 @@ main {
         "left3 right3";
     column-gap: 2.5vw;
     row-gap: 2.5vw;
-    margin-left: 8vw;
-    margin-right: 5vw;
+    margin: 0 5vw 0 8vw;
 }
 
 .none {
@@ -231,15 +230,11 @@ main {
 
 .part-card {
     width: 100%;
-    background-color: rgb(255, 252, 252);
+    background-color: rgb(255, 252, 248);
     border: 3px solid var(--main-color);
     border-radius: 10px;
     padding: 1vw 2.5vw 1vw 2.5vw;
     box-sizing: border-box;
-}
-
-.part-card > h2 {
-    margin-top: 0.5rem; /* reduce margin below .scroll-to-top */
 }
 
 #part-card-1 .scroll-to-top {
@@ -335,8 +330,8 @@ and the last one uses right position with no scroll-to-next: see #part-card-6 .s
 .spotify {
     width: 100%;
     height: 80px;
-    margin-bottom: 15px;
     border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 .text {
