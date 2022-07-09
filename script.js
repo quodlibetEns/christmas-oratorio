@@ -62,7 +62,9 @@ document.getElementById('high-contrast').addEventListener('click', () => {
         }
     })
 
-// Toggle large font size
+/*
+
+    // Toggle large font size
 
 document.getElementById('font-size').addEventListener('click', () => {
         if (largeFont == false) {
@@ -77,6 +79,8 @@ document.getElementById('font-size').addEventListener('click', () => {
             largeFont = false;
         }
     })
+
+    */
 
 // Toggle sans-serif font
 
