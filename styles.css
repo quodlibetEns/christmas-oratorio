@@ -37,17 +37,18 @@ a:hover {
 }
 
 #accessibility-pop-up {
-    width: 50vw;
-    /*height: 50vh;*/
-    position: fixed;
-    top: 25vh;
-    left: 25vw;
-    border: 2px solid #333;
+    width: 25vw;
+    min-width: 300px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    margin-top: 20px;
+    padding: 17px 34px 17px 34px;
+    border: 2px solid #000;
     border-radius: 10px;
-    background-color: rgba(255, 245, 245, 0.9);
+    background-color: #fff;
     display: none;
     z-index: 2;
-    padding: 10px;
     font-size: 2.5rem;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -61,7 +62,7 @@ a:hover {
     border: 2px solid #000;
     margin: 20px 10% 20px 10%;
     padding: 5px;
-    border-radius: 45px;
+    border-radius: 10px;
     font-size: 1.5rem;
     background-color: #fff;
     transition: all 0.3s ease 0s;
@@ -99,7 +100,7 @@ button {
     width: 32px;
     height: 32px;
     line-height: 32px;
-    margin: 10px 10px 0 0;
+    margin: 8px 8px 0 0;
 }
 
 .credit {
@@ -122,11 +123,6 @@ button {
 
 .german {
     grid-area: german;
-}
-
-/*fix for the header covering up content when the page scrolls to an in-page anchor*/
-html {
-    scroll-padding-top: 50px;
 }
 
 h1 {
@@ -166,6 +162,9 @@ header {
 
 html {
     scroll-behavior: smooth;
+    
+    /*fix for the header covering up content when the page scrolls to an in-page anchor*/
+    scroll-padding-top: 50px;
 }
 
 .indent {
