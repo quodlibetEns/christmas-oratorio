@@ -24,22 +24,18 @@ a:hover {
 #accessibility-button {
     background-color: #fff;
     color: #000;
-    position: absolute;
-    right: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-#accessibility-button:hover, #accessibility-button:focus {
+#accessibility-button:hover {
     background-color: #000;
+    border-color: #000;
     color: #fff;
 }
 
 #accessibility-pop-up {
     width: 25vw;
     min-width: 300px;
-    position: absolute;
+    position: fixed;
     top: 50px;
     right: 20px;
     margin-top: 20px;
@@ -86,7 +82,7 @@ button {
     cursor: pointer;
     font-size: 1rem;
     font-family: inherit;
-    margin: none;
+    margin: 0;
 }
 
 .center {
@@ -129,7 +125,11 @@ h1 {
     font-size: 40px;
     line-height: 60px;
     font-style: italic;
-    margin: 0 10vw 0 10vw; 
+    margin: 0;
+}
+
+#h1-title {
+    flex: 0 1 50vw;
 }
 
 h2, h3 {
@@ -154,10 +154,19 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 5px;
     background-color: var(--main-color);
     color: var(--light-color);
-    z-index: 2;
+    z-index: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-button {
+    border: 2px solid #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 0 1 auto;
 }
 
 html {
@@ -264,6 +273,22 @@ main {
 
 #pic3 {
     grid-area: right3;
+}
+
+#privacy-banner {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    text-align: justify;
+    padding: 20px 15vw 20px 15vw;
+    margin-top: 50px;
+    box-sizing: border-box;
+    display: none;
+}
+
+#privacy-button {
+    background-color: rgba(0,0,0,0);
+    color: #fff;
 }
 
 .recitative {
