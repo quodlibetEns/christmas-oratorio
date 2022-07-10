@@ -71,26 +71,6 @@ document.getElementById('high-contrast').addEventListener('click', () => {
         }
     })
 
-/*
-
-    // Toggle large font size
-
-document.getElementById('font-size').addEventListener('click', () => {
-        if (largeFont == false) {
-            root.style.setProperty('font-size', '32px');
-            document.getElementById('header').style.height = "70px";
-            jumpButton.style.fontSize = "32px";
-            largeFont = true;
-        } else if (largeFont == true) {
-            root.style.setProperty('font-size', '16px');
-            document.getElementById('header').style.height = "50px";
-            jumpButton.style.fontSize = "16px";
-            largeFont = false;
-        }
-    })
-
-    */
-
 // Toggle sans-serif font
 
 document.getElementById('sans-serif').addEventListener('click', () => {
