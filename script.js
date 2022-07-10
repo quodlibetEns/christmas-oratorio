@@ -30,13 +30,22 @@ const accessibilityPopUp = document.getElementById('accessibility-pop-up');
 const accessibilityButton = document.getElementById('accessibility-button');
 const closeAccessibilityPopUp = document.getElementById('close-accessibility-pop-up');
 
+var accessibilityPopUpVisible = false; // initilaise state of popup
+
 // Trigger and close pop-up
 accessibilityButton.addEventListener('click', () => {
-        accessibilityPopUp.style.display = "block";
-    })
+    if (accessibilityPopUpVisible == false) {
+        accessibilityPopUp.style.setProperty('display', 'block');
+        accessibilityPopUpVisible = true;
+    } else {
+        accessibilityPopUp.style.setProperty('display', 'none');
+        accessibilityPopUpVisible = false;
+    }
+})
 
 closeAccessibilityPopUp.addEventListener('click', () => {
         accessibilityPopUp.style.display = "none";
+        accessibilityPopUpVisible = false;
     })
 
 // store the default state of the items effected
@@ -94,7 +103,28 @@ document.getElementById('sans-serif').addEventListener('click', () => {
     }
 })
 
-// 3. MISCELLANEA
+// 3. PRIVACY BANNER
+
+// Open or close click on privacy button, and move main content out of the way
+
+var bannerVisible = false; // store the initial banner state
+
+const banner = document.getElementById('privacy-banner'); //the banner to show/hide
+const main = document.getElementById('main'); //the content to move
+
+document.getElementById('privacy-button').addEventListener('click', () => {
+    if (bannerVisible == false) {
+        banner.style.setProperty('display', 'block');
+        main.style.setProperty('margin-top', '500px');
+        bannerVisible = true;
+    } else {
+        banner.style.setProperty('display', 'none');
+        main.style.setProperty('margin-top', '0')
+        bannerVisible = false;
+    }
+})
+
+// 4. MISCELLANEA
 
 // Ensure the jump-to-music link with role="button" behaves like a button
 // I.e. space key needs to trigger link

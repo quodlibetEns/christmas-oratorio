@@ -17,15 +17,19 @@
 
     <header id="header">
         <h1 id="h1-title">Bach's Christmas Oratorio</h1>
-
-        <div id="button-container-1" class="button-container">
-            <button id="privacy-button">Privacy info</button>
-        </div>
-
-        <div id="button-container-2" class="button-container">
-            <button id="accessibility-button">Accessibility options</button>
-        </div>
+        <button id="privacy-button" class="header-button">Privacy & credits</button>
+        <button id="accessibility-button" class="header-button">Accessibility options</button>
     </header>
+
+    <div id="privacy-banner"> <!--Hidden until user clicks on button-->
+        <h2>Privacy, credits, license</h2>
+        <p>This site is made by <a href="https://github.com/quodlibetEns">@quodlibetEns</a>. Translation used by kind permission of Z. Philip Ambrose.</p>
+        <p>The source code for this site is freely available to view and reuse under the GPL3. You can find the source code in <a href="https://github.com/quodlibetEns/christmas-oratorio">this site's GitHub repository.</a></p>
+        <p>I do not collect any personal information or data, nor set any cookies, nor use any kind of tracking technology. This site is hosted using GitHub pages; GitHub's <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">privacy statement</a> states when I last checked that they may collect basic persional information (like your IP address) to run the service and comply with legal obligations.</p>
+        <p>A lot of the content on this page is from Spotify. <a href="https://www.spotify.com/us/legal/privacy-policy/#3-personal-data-we-collect-about-you">Spotify's privacy policy</a> states that they might collect all sort of stuff when you use their service (e.g. through the embedded tracks on this page, and maybe they do. I don't know.</p>
+        <p>The Spotify players play music that have DRM (Digital Rights Management) technologies applied to them, and you'll need to have DRM content enabled in your browser settings for this to work. I had no good way to avoid its use. This is unfortunate, because DRM is antithetical to free expression and users' rights, supporting only the profits of large corporations. The Electronic Frontier Foundation offers some useful information on <a href="https://www.eff.org/issues/drm">the fight against DRM.</a></p>
+        <p>If you're intereseted in ways to protect yourself against tracking and advertising technologies such as those Spotify may use, broswer addons may be the easiest way. Among others, I use <a href="https://www.eff.org/pages/privacy-badger">Privacy Badger</a> and <a href="https://ublockorigin.com/">uBlock Origin</a>.</p>
+    </div>
 
     <div id="accessibility-pop-up"> <!--Hidden until user clicks on button-->
         <div id="close-accessibility-pop-up">&#10006;</div>
@@ -35,7 +39,7 @@
         <div id="sans-serif" class="accessibility-toggle">Toggle sans-serif font</div>
     </div>
 
-    <main>
+    <main id="main">
 
         <section id="intro">
                 <h2>
