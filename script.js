@@ -95,7 +95,9 @@ const main = document.getElementById('main'); //the content to move
 document.getElementById('privacy-button').addEventListener('click', () => {
     if (bannerVisible == false) {
         banner.style.setProperty('display', 'block');
-        main.style.setProperty('margin-top', '500px');
+        let bannerHeight = banner.scrollHeight;
+        bannerHeight = `${bannerHeight.toString()}px`;
+        main.style.setProperty('margin-top', bannerHeight);
         bannerVisible = true;
     } else {
         banner.style.setProperty('display', 'none');
